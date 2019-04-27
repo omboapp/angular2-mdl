@@ -3,12 +3,13 @@ import {
   TestBed,
   async
 } from '@angular/core/testing';
-import { DOCUMENT, By } from '@angular/platform-browser';
 import { Component} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import {
   MdlCheckboxComponent,
   MdlCheckboxModule} from './mdl-checkbox.component';
-import { FormsModule } from '@angular/forms';
 
 describe('Component: MdlCheckbox', () => {
 

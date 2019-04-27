@@ -3,9 +3,10 @@ import {
   TestBed,
   async
 } from '@angular/core/testing';
-import { By, DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { By } from '@angular/platform-browser';
 import { Component } from '@angular/core';
-import { MdlSliderComponent, MdlSliderModule } from './mdl-slider.component';
+import { MdlSliderComponent, MdlSliderModule } from './index';
 import { FormsModule } from '@angular/forms';
 
 describe('Component: MdlSlider', () => {

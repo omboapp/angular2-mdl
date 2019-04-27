@@ -1,7 +1,8 @@
 import { TestBed, inject, async } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DOCUMENT, By } from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { MdlIconToggleModule, MdlIconToggleComponent } from './index';
 
 describe('Component: MdlIconToggle', () =>

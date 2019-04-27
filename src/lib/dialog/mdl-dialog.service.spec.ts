@@ -7,7 +7,8 @@ import {
   Component, NgModule, Optional, Inject, ViewChild,
   InjectionToken
 } from '@angular/core';
-import { DOCUMENT, By } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { By } from '@angular/platform-browser';
 import {
   MdlDialogOutletModule,
   MdlDialogOutletService,

@@ -4,7 +4,8 @@ import {
 	async
 } from '@angular/core/testing';
 import { Component, NgModule, ApplicationRef } from '@angular/core';
-import { DOCUMENT, By } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { By } from '@angular/platform-browser';
 import { MdlDialogOutletComponent } from './mdl-dialog-outlet.component';
 import { MdlDialogInnerOutletComponent, MdlDialogOutletModule } from './index';
 
