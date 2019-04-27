@@ -1,33 +1,38 @@
 import {
-  Router,
-  ActivatedRoute
+	Router,
+	ActivatedRoute
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
+export class AbstractDemoComponent
+{
+	private sub: any;
+	private windowTitle = 'angular8-mdl';
 
-export class AbstractDemoComponent {
+	constructor(
+		private router: Router,
+		private route: ActivatedRoute,
+		private titleService: Title
+	) {}
 
-  private sub: any;
+	public ngOnInit()
+	{
+		this.titleService.setTitle(this.windowTitle);
 
-  private windowTitle = 'angular2-mdl';
+		this.sub = this.router.events.subscribe(() => {
+			if (this.route.snapshot.data && this.route.snapshot.data['title']) {
+				const title = this.windowTitle + ' - ' + this.route.snapshot.data['title'];
+				this.titleService.setTitle(title);
+			} else {
+				this.titleService.setTitle(this.windowTitle);
+			}
+		});
+	}
 
-  constructor(private router: Router, private route: ActivatedRoute, private titleService: Title) {}
-
-  public ngOnInit() {
-    this.titleService.setTitle(this.windowTitle);
-    this.sub = this.router.events.subscribe( (event) => {
-      if (this.route.snapshot.data && this.route.snapshot.data['title']) {
-        const title = this.windowTitle + ' - ' + this.route.snapshot.data['title'];
-        this.titleService.setTitle(title);
-      } else {
-        this.titleService.setTitle(this.windowTitle);
-      }
-    });
-  }
-
-  public ngOnDestroy() {
-    if(this.sub) {
-      this.sub.unsubscribe();
-    }
-  }
+	public ngOnDestroy()
+	{
+		if (this.sub) {
+			this.sub.unsubscribe();
+		}
+	}
 }

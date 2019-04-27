@@ -6,8 +6,8 @@ Angular 7 components, directives and styles based on material design lite https:
 
 [![Build Status](https://travis-ci.org/mseemann/angular2-mdl.svg?branch=master)](https://travis-ci.org/mseemann/angular2-mdl)
 [![CircleCI](https://circleci.com/gh/mseemann/angular2-mdl/tree/master.svg?style=shield)](https://circleci.com/gh/mseemann/angular2-mdl/tree/master)
-[![npm version](https://badge.fury.io/js/@angular-mdl%2Fcore.svg)](https://www.npmjs.com/package/@angular-mdl/core)
-[![Downloads](http://img.shields.io/npm/dm/@angular-mdl%2Fcore.svg)](https://npmjs.org/package/@angular-mdl/core)
+[![npm version](https://badge.fury.io/js/@angular-mdl%2Fcore.svg)](https://www.npmjs.com/package/@angular/mdl)
+[![Downloads](http://img.shields.io/npm/dm/@angular-mdl%2Fcore.svg)](https://npmjs.org/package/@angular/mdl)
 [![Coverage Status](https://coveralls.io/repos/github/mseemann/angular2-mdl/badge.svg?branch=master)](https://coveralls.io/github/mseemann/angular2-mdl?branch=master)
 [![Dependencies](https://david-dm.org/mseemann/angular2-mdl.svg)](https://david-dm.org/mseemann/angular2-mdl)
 [![peerDependencies Status](https://david-dm.org/mseemann/angular2-mdl/peer-status.svg)](https://david-dm.org/mseemann/angular2-mdl?type=peer)
@@ -44,7 +44,7 @@ Angular 7 components, directives and styles based on material design lite https:
 ### Installation
 
 ```bash
-npm install @angular-mdl/core --save
+npm install @angular/mdl --save
 ```
 
 ### How to use the mdl components with webpack
@@ -57,12 +57,12 @@ You need to configure your `system-config.js` file:
 
 ```JavaScript
 const map: any = {
-  '@angular-mdl/core': 'vendor/@angular-mdl/core'
+  '@angular/mdl': 'vendor/@angular/mdl'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  '@angular-mdl/core': { main: 'bundle/core.js'}
+  '@angular/mdl': { main: 'bundle/core.js'}
 };
 ```
 
@@ -79,7 +79,7 @@ This package includes the scss files from material-design-lite.
 With these files you are able to change the colors and other variables in your own scss files:
 
 ```scss
-@import "~@angular-mdl/core/scss/color-definitions";
+@import "~@angular/mdl/common/theming/color-definitions";
 
 $color-primary: $palette-blue-500;
 $color-primary-dark: $palette-blue-700;
@@ -87,15 +87,15 @@ $color-accent: $palette-amber-A200;
 $color-primary-contrast: $color-dark-contrast;
 $color-accent-contrast: $color-dark-contrast;
 
-@import '~@angular-mdl/core/scss/material-design-lite';
+@import '~@angular/mdl/common/theming/material-design-lite';
 ```
 
 To make this working you need to find out the way how you could tell your build system where the scss is located.
-For example with webpack you can use the special `~@angular-mdl/core` syntax used above. Or you can configure the includePaths:
+For example with webpack you can use the special `~@angular/mdl` syntax used above. Or you can configure the includePaths:
 
 ```JavaScript
 sassLoader: {
-	includePaths: [util.root('node_modules', '@angular-mdl/core', 'scss')]
+	includePaths: [util.root('node_modules', '@angular/mdl', 'common', 'theming')]
 }
 ```
 

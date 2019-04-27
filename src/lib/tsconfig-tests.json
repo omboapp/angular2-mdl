@@ -1,0 +1,29 @@
+{
+	"extends": "./tsconfig-build",
+	"compilerOptions": {
+		"importHelpers": false,
+		"module": "commonjs",
+		"target": "es5",
+		"types": ["jasmine"],
+		"paths": {
+			"@angular/mdl/*": ["./*"]
+		}
+	},
+	"angularCompilerOptions": {
+		"strictMetadataEmit": true,
+		"skipTemplateCodegen": true,
+		"emitDecoratorMetadata": true,
+		"fullTemplateTypeCheck": true,
+
+		"annotateForClosureCompiler": false,
+		"flatModuleOutFile": null,
+		"flatModuleId": null
+	},
+	"include": [
+		"**/*.spec.ts",
+		"index.ts"
+	],
+	"exclude": [
+		"**/schematics/**/*.ts"
+	]
+}

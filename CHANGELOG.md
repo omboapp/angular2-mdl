@@ -128,7 +128,7 @@
 # 3.0.0-beta.3 (2017-02-24)
 
 ###Breaking Changes
-* The npm package and the name have changed. It is now: @angular-mdl/core
+* The npm package and the name have changed. It is now: @angular/mdl
 * This Verison is compatible with Angualr 4.rc.1
 
 <a name="2.13.2"></a>

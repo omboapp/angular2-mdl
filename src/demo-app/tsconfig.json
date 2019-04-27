@@ -1,0 +1,17 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "",
+		"module": "esnext",
+		"outDir": "../out-tsc/app",
+		"types": [ "node" ],
+		"typeRoots": [ "../node_modules/@types" ],
+		"paths": {
+			"@angular/mdl": ["../lib/index"],
+			"@angular/mdl/*": ["../lib/*"]
+		}
+	},
+	"exclude": [
+		"**/*.spec.ts"
+	]
+}

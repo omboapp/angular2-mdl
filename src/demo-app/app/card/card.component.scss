@@ -5,7 +5,7 @@
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('assets/sund.jpg') center / cover;
+  background: url('../../assets/sund.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -19,14 +19,14 @@
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background:
-    url('assets/wood.jpg') bottom right 15% no-repeat #46B6AC;
+    url('../../assets/wood.jpg') bottom right 15% no-repeat #46B6AC;
 }
 
 .demo-card-image.mdl-card {
   width: 256px;
   height: 256px;
   margin-right:1rem;
-  background: url('assets/richter.jpg') center / cover;
+  background: url('../../assets/richter.jpg') center / cover;
 }
 .demo-card-image > .mdl-card__actions {
   height: 52px;

@@ -1,50 +1,56 @@
-import { Component, AfterViewInit, ContentChild, ViewChild } from '@angular/core';
-import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
-import { hostConfig } from '../animations/flyInOutTrigger-animation';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import {
-  Router,
-  ActivatedRoute
+	Router,
+	ActivatedRoute
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { MdlTextFieldComponent } from '../../../lib/textfield';
+import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
+import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';
-import { MdlTextFieldComponent } from '../../../lib/components/textfield/mdl-textfield.component';
-
 
 @Component({
-  selector: 'textfield-demo',
-  host: hostConfig,
-  animations: [
-    flyInOutTrigger
-  ],
-  templateUrl: 'textfield.component.html'
+	selector: 'textfield-demo',
+	host: hostConfig,
+	animations: [
+		flyInOutTrigger
+	],
+	templateUrl: 'textfield.component.html'
 })
-export class TextFieldDemo extends AbstractDemoComponent implements AfterViewInit {
+export class TextFieldDemo extends AbstractDemoComponent implements AfterViewInit
+{
+	@ViewChild('theFirstTextfield') tf: MdlTextFieldComponent;
 
-  @ViewChild('theFirstTextfield') tf: MdlTextFieldComponent;
+	public number1: null | number = null;
 
-  public number1: number = null;
+	get valueType()
+	{
+		return typeof this.number1;
+	}
 
-  get valueType() {
-    return typeof this.number1;
-  }
+	constructor(
+		router: Router, route: ActivatedRoute, titleService: Title
+	) {
+		super(router, route, titleService);
+	}
 
-  constructor(router: Router, route: ActivatedRoute, titleService: Title) {
-    super(router, route, titleService);
-  }
+	public onBlur(event: FocusEvent)
+	{
+		console.log('blur', event);
+	}
 
-  public onBlur(event: FocusEvent) {
-    console.log('blur', event);
-  }
+	public onFocus(event: FocusEvent)
+	{
+		console.log('focus', event);
+	}
 
-  public onFocus(event: FocusEvent) {
-    console.log('focus', event);
-  }
+	public onKeyup(event: KeyboardEvent)
+	{
+		console.log('keyup', event);
+	}
 
-  public onKeyup(event: KeyboardEvent) {
-    console.log('keyup', event);
-  }
-
-  public ngAfterViewInit(){
-    this.tf.setFocus();
-  }
+	public ngAfterViewInit()
+	{
+		this.tf.setFocus();
+	}
 }

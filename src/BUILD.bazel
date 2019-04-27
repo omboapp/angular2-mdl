@@ -1,0 +1,18 @@
+package(default_visibility = ["//visibility:public"])
+
+load("//:packages.bzl", "MDL_PACKAGES")
+load("//tools:defaults.bzl", "ts_library")
+
+# List that contains all source files that need to be processed by Dgeni.
+apiSourceFiles = ["//src/lib/%s:source-files" % name for name in MDL_PACKAGES]
+
+exports_files([
+  "bazel-tsconfig-build.json",
+  "bazel-tsconfig-test.json",
+  "README.md",
+])
+
+ts_library(
+  name = 'module-typings',
+  srcs = [":module-typings.d.ts"]
+)
