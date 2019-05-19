@@ -23,7 +23,7 @@ const prerenderOutFile = join(outDir, 'prerender.js');
 
 /** Task that builds the universal-app and runs the prerender script. */
 task('prerender', ['universal:build'], execTask(
-  // Runs node with the tsconfig-paths module to alias the @angular/material dependency.
+  // Runs node with the tsconfig-paths module to alias the @angular/mdl dependency.
   'node', ['-r', 'tsconfig-paths/register', prerenderOutFile], {
     env: {TS_NODE_PROJECT: tsconfigPrerenderPath},
     // Errors in lifecycle hooks will write to STDERR, but won't exit the process with an
@@ -43,7 +43,7 @@ task(
           'mdl:build-release',
 /*
           'cdk-experimental:build-release',
-          'material-experimental:build-release',
+          'mdl-experimental:build-release',
 */
         ],
         ['universal:copy-release', 'universal:copy-files'],
@@ -72,6 +72,6 @@ task('universal:copy-release', () => {
   copySync(join(releasesDir, 'mdl'), join(outDir, 'mdl'));
 /*
   copySync(join(releasesDir, 'cdk-experimental'), join(outDir, 'cdk-experimental'));
-  copySync(join(releasesDir, 'material-experimental'), join(outDir, 'material-experimental'));
+  copySync(join(releasesDir, 'mdl-experimental'), join(outDir, 'mdl-experimental'));
 */
 });

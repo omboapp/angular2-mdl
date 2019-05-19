@@ -7,8 +7,8 @@ import {
 	InjectionToken
 } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
-import { MdlTextFieldComponent } from '../../../lib/textfield';
-import { MdlDialogReference } from '../../../lib/dialog';
+import { MdlTextFieldComponent } from '../../../mdl/textfield';
+import { MdlDialogReference } from '../../../mdl/dialog';
 import { LoginService } from './login.service';
 
 export const TEST_VALUE = new InjectionToken<string>('test value');

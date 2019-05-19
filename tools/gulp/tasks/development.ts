@@ -11,7 +11,7 @@ import {
 import {
 /*
   cdkPackage,
-  materialExperimentalPackage,
+  mdlExperimentalPackage,
   cdkExperimentalPackage,
 */
   mdlPackage,
@@ -69,12 +69,12 @@ task('build:devapp', sequenceTask(
   'mdl:build-no-bundles',
 /*
   'cdk-experimental:build-no-bundles',
-  'material-experimental:build-no-bundles',
+  'mdl-experimental:build-no-bundles',
   'material-moment-adapter:build-no-bundles',
   'build-examples-module',
   // The examples module needs to be manually built before building examples package because
   // when using the `no-bundles` task, the package-specific pre-build tasks won't be executed.
-  'material-examples:build-no-bundles',
+  'mdl-examples:build-no-bundles',
 */
   [':build:devapp:assets', ':build:devapp:scss', ':build:devapp:ts'],
   // Inline all component resources because otherwise SystemJS tries to load HTML, CSS and
@@ -100,14 +100,14 @@ task('stage-deploy:devapp', ['build:devapp'], () => {
 //  copyFiles(cdkPackage.outputDir, '**/*.+(js|map)', join(deployOutputDir, 'dist/packages/cdk'));
   copyFiles(mdlPackage.outputDir, '**/*.+(js|map)',
     join(deployOutputDir, 'dist/packages/mdl'));
-//  copyFiles(materialExperimentalPackage.outputDir, '**/*.+(js|map)',
-//    join(deployOutputDir, 'dist/packages/material-experimental'));
+//  copyFiles(mdlExperimentalPackage.outputDir, '**/*.+(js|map)',
+//    join(deployOutputDir, 'dist/packages/mdl-experimental'));
 //  copyFiles(cdkExperimentalPackage.outputDir, '**/*.+(js|map)',
 //    join(deployOutputDir, 'dist/packages/cdk-experimental'));
   copyFiles(mdlPackage.outputDir, '**/prebuilt/*.+(css|map)',
     join(deployOutputDir, 'dist/packages/mdl'));
 //  copyFiles(examplesPackage.outputDir, '**/*.+(js|map)',
-//    join(deployOutputDir, 'dist/packages/material-examples'));
+//    join(deployOutputDir, 'dist/packages/mdl-examples'));
 //  copyFiles(momentAdapterPackage.outputDir, '**/*.+(js|map)',
 //    join(deployOutputDir, 'dist/packages/material-moment-adapter'));
 });
@@ -146,17 +146,22 @@ task(':watch:devapp', () => {
   // CDK package watchers.
 //  watchFilesAndReload(join(cdkPackage.sourceDir, '**/*'), ['cdk:build-no-bundles']);
 
-  const materialCoreThemingGlob = join(
+  const mdlCoreThemingGlob = join(
     mdlPackage.sourceDir,
-    '**/common/+(theming|typography)/**/*.scss'
+    // '**/common/+(theming|typography)/**/*.scss'
+	'**/common/+(theming)/**/*.scss'
   );
 
   // Angular Material Design Lite package watchers.
   watchFilesAndReload([
-    join(mdlPackage.sourceDir, '**/!(*-theme.scss)'), `!${materialCoreThemingGlob}`
+    join(mdlPackage.sourceDir, '**/!(*-theme.scss)'),
+//    join(mdlExperimentalPackage.sourceDir, '**/!(*_mdc-*.scss)'),
+    `!${mdlCoreThemingGlob}`
   ], ['mdl:build-no-bundles']);
   watchFilesAndReload([
-    join(mdlPackage.sourceDir, '**/*-theme.scss'), materialCoreThemingGlob
+    join(mdlPackage.sourceDir, '**/*-theme.scss'),
+//    join(mdlExperimentalPackage.sourceDir, '**/*_mdc-*.scss'),
+    mdlCoreThemingGlob
   ], [':build:devapp:scss']);
 
 //  // Moment adapter package watchers
@@ -164,8 +169,8 @@ task(':watch:devapp', () => {
 //    ['material-moment-adapter:build-no-bundles']);
 //
 //  // Angular Material Design Lite experimental package watchers
-//  watchFilesAndReload(join(materialExperimentalPackage.sourceDir, '**/*'),
-//    ['material-experimental:build-no-bundles']);
+//  watchFilesAndReload(join(mdlExperimentalPackage.sourceDir, '**/*'),
+//    ['mdl-experimental:build-no-bundles']);
 //
 //  // CDK experimental package watchers
 //  watchFilesAndReload(join(cdkExperimentalPackage.sourceDir, '**/*'),
@@ -173,7 +178,7 @@ task(':watch:devapp', () => {
 //
 //  // Example package watchers.
 //  watchFilesAndReload(join(examplesPackage.sourceDir, '**/*'),
-//    ['material-examples:build-no-bundles']);
+//    ['mdl-examples:build-no-bundles']);
 });
 
 // Note that we need to rebuild the TS here, because the resource inlining

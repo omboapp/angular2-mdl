@@ -6,7 +6,7 @@ export const releasePackages = [
   'mdl',
 /*
   'cdk-experimental',
-  'material-experimental',
+  'mdl-experimental',
   'material-moment-adapter'
 */
 ];

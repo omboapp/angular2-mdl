@@ -28,8 +28,8 @@ export function replaceVersionPlaceholders(packageDir: string) {
   // version of the root package.json file.
   files.forEach(filePath => {
     const fileContent = readFileSync(filePath, 'utf-8')
-      .replace(ngVersionPlaceholderRegex, buildConfig.angularVersion)
-      .replace(versionPlaceholderRegex, buildConfig.projectVersion);
+                            .replace(ngVersionPlaceholderRegex, buildConfig.angularVersion)
+                            .replace(versionPlaceholderRegex, buildConfig.projectVersion);
 
     writeFileSync(filePath, fileContent);
   });
@@ -49,12 +49,20 @@ function buildPlaceholderFindCommand(packageDir: string) {
   if (platform() === 'win32') {
     return {
       binary: 'findstr',
-      args: ['/msi', `${ngVersionPlaceholderText} ${versionPlaceholderText}`, `${packageDir}\\*`]
+      args: [
+        '/msi',
+        `${ngVersionPlaceholderText} ${versionPlaceholderText}`,
+        `${packageDir}\\*`
+      ]
     };
   } else {
     return {
       binary: 'grep',
-      args: ['-ril', `${ngVersionPlaceholderText}\\|${versionPlaceholderText}`, packageDir]
+      args: [
+        '-ril',
+        `${ngVersionPlaceholderText}\\|${versionPlaceholderText}`,
+        packageDir
+      ]
     };
   }
 }

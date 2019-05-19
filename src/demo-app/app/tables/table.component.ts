@@ -10,7 +10,7 @@ import { Title } from '@angular/platform-browser';
 import {
 	IMdlTableModelItem,
 	MdlDefaultTableModel
-} from '../../../lib/table';
+} from '../../../mdl/table';
 import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
 import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';

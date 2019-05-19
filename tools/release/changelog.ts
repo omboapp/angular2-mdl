@@ -76,7 +76,7 @@ function createChangelogWriterOptions(changelogPath: string) {
       context.commitGroups = context.commitGroups.filter((group: any) => {
         group.commits = group.commits.filter((commit: any) => {
 
-          // Commits that change things for "cdk-experimental" or "material-experimental" will also
+          // Commits that change things for "cdk-experimental" or "mdl-experimental" will also
           // show up in the changelog by default. We don't want to show these in the changelog.
           if (commit.scope && commit.scope.includes('experimental')) {
             console.log(yellow(`  ↺   Skipping experimental: "${bold(commit.header)}"`));

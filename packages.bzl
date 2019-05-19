@@ -29,12 +29,12 @@ MDL_PACKAGES = [
   "tooltip",
 ]
 
-MDL_TARGETS = ["//src/lib:mdl"] + ["//src/lib/%s" % p for p in MDL_PACKAGES]
+MDL_TARGETS = ["//src/mdl:mdl"] + ["//src/mdl/%s" % p for p in MDL_PACKAGES]
 
 # List that references the sass libraries for each `@angular/mdl` package. This can be used to create
 # the theming scss-bundle or to specify dependencies for the all-theme.scss file.
 MDL_SCSS_LIBS = [
-  "//src/lib/%s:%s_scss_lib" % (p, p.replace('-', '_')) for p in MDL_PACKAGES
+  "//src/mdl/%s:%s_scss_lib" % (p, p.replace('-', '_')) for p in MDL_PACKAGES
 ]
 
 # Each individual package uses a placeholder for the version of Angular to ensure they're

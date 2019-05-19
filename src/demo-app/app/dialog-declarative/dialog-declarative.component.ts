@@ -9,9 +9,9 @@ import {
 import { Title } from '@angular/platform-browser';
 import {
 	MdlDialogComponent
-} from '../../../lib/dialog';
-import { MdlTextFieldComponent } from '../../../lib/textfield';
-import { MdlDialogReference } from '../../../lib/dialog';
+} from '../../../mdl/dialog';
+import { MdlTextFieldComponent } from '../../../mdl/textfield';
+import { MdlDialogReference } from '../../../mdl/dialog';
 import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
 import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';

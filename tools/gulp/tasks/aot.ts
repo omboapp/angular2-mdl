@@ -36,9 +36,9 @@ task('build-aot:release-packages', sequenceTask(
     'mdl:build-release',
 /*
     'cdk-experimental:build-release',
-    'material-experimental:build-release',
+    'mdl-experimental:build-release',
     'material-moment-adapter:build-release',
-    'material-examples:build-release',
+    'mdl-examples:build-release',
 */
   ],
 ));

@@ -4,7 +4,7 @@ import {
 	ActivatedRoute
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { MdlTextFieldComponent } from '../../../lib/textfield';
+import { MdlTextFieldComponent } from '../../../mdl/textfield';
 import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
 import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';

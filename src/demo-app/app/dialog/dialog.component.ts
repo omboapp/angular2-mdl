@@ -9,8 +9,8 @@ import {
 	IOpenCloseRect,
 	MdlDialogReference,
 	MdlDialogService
-} from '../../../lib/dialog';
-import { MdlSnackbarService } from '../../../lib/snackbar';
+} from '../../../mdl/dialog';
+import { MdlSnackbarService } from '../../../mdl/snackbar';
 import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
 import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';

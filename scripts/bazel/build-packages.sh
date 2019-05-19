@@ -20,8 +20,8 @@ for p in ${packages[@]}
 do
   bazel build src/${p}:npm_package
 
-  # The output for "lib" should go into a directory named "material"
-  [[ ${p} = "lib" ]] && out_dir="material" || out_dir="${p}"
+  # The output for "mdl" should go into a directory named "mdl"
+  [[ ${p} = "mdl" ]] && out_dir="mdl" || out_dir="${p}"
 
   # Copy without preserving the read-only mode from bazel so that we can make final modifications
   # to the generated package.

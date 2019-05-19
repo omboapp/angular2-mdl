@@ -1,0 +1,81 @@
+package(default_visibility=["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_library", "sass_binary")
+load("//:packages.bzl", "MDL_SCSS_LIBS")
+load("//tools:defaults.bzl", "ng_module", "ng_test_library", "ng_web_test_suite")
+
+exports_files(["theming/_theming.scss"])
+
+ng_module(
+  name = "common",
+  srcs = glob(["**/*.ts"], exclude=["**/*.spec.ts"]),
+  module_name = "@angular/mdl/common",
+  deps = [
+    "@npm//@angular/core",
+  ],
+)
+
+
+sass_library(
+  name = "common_scss_lib",
+  srcs = glob(["**/_*.scss"], exclude = ["theming/_all-theme.scss"]),
+)
+
+sass_library(
+  name = "all_themes",
+  srcs = [
+    "theming/_all-theme.scss",
+#    "typography/_all-typography.scss",
+  ],
+  deps = MDL_SCSS_LIBS,
+)
+
+sass_binary(
+  name = "indigo_pink_prebuilt",
+  src = "theming/prebuilt/indigo-pink.scss",
+  deps = [":all_themes"],
+)
+
+sass_binary(
+  name = "deeppurple-amber_prebuilt",
+  src = "theming/prebuilt/deeppurple-amber.scss",
+  deps = [":all_themes"],
+)
+
+sass_binary(
+  name = "pink-bluegrey_prebuilt",
+  src = "theming/prebuilt/pink-bluegrey.scss",
+  deps = [":all_themes"],
+)
+
+sass_binary(
+  name = "purple-green_prebuilt",
+  src = "theming/prebuilt/purple-green.scss",
+  deps = [":all_themes"],
+)
+
+
+#################
+#  Test targets
+#################
+
+ng_test_library(
+  name = "common_test_sources",
+  srcs = glob(["**/*.spec.ts"]),
+  deps = [
+    "@npm//@angular/platform-browser",
+    "//src/mdl/list",
+    "//src/mdl/menu",
+    ":common"
+  ]
+)
+
+ng_web_test_suite(
+  name = "unit_tests",
+  deps = [":common_test_sources"],
+)
+
+filegroup(
+  name = "source-files",
+  srcs = glob(["**/*.ts"]),
+)

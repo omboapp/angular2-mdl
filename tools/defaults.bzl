@@ -11,6 +11,11 @@ _DEFAULT_TSCONFIG_BUILD = "//src:bazel-tsconfig-build.json"
 _DEFAULT_TSCONFIG_TEST = "//src:bazel-tsconfig-test.json"
 _DEFAULT_TS_TYPINGS = "@npm//typescript:typescript__typings"
 
+# Whether Angular type checking should be enabled or not. Enabled by
+# default but will be overwritten when running snapshots tests with Ivy
+# since type-checking is not complete yet. See FW-1004.
+_ENABLE_NG_TYPE_CHECKING = True
+
 # Re-exports to simplify build file load statements
 markdown_to_html = _markdown_to_html
 
@@ -55,6 +60,7 @@ def ng_module(deps = [], tsconfig = None, testonly = False, **kwargs):
       local_deps = local_deps + [d]
 
   _ng_module(
+    type_check = _ENABLE_NG_TYPE_CHECKING,
     deps = local_deps,
     tsconfig = tsconfig,
     testonly = testonly,
@@ -108,7 +114,7 @@ def ng_web_test_suite(deps = [], static_css = [], bootstrap = [], **kwargs):
   # that is needed for measuring, will unexpectedly fail. Also always adding a prebuilt theme
   # reduces the amount of setup that is needed to create a test suite Bazel target. Note that the
   # prebuilt theme will be also added to CDK test suites but shouldn't affect anything.
-  static_css = static_css + ["//src/lib/prebuilt-themes:indigo-pink"]
+  static_css = static_css + ["//src/mdl/prebuilt-themes:indigo-pink"]
 
   # Workaround for https://github.com/bazelbuild/rules_typescript/issues/301
   # Since some of our tests depend on CSS files which are not part of the `ng_module` rule,

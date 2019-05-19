@@ -1,0 +1,9 @@
+@import "color-definitions";
+
+$color-primary: $palette-blue-800;
+$color-primary-dark: $palette-blue-700;
+$color-accent: $palette-grey-700;
+$color-primary-contrast: $color-dark-contrast;
+$color-accent-contrast: $color-dark-contrast;
+
+@import 'material-design-lite';

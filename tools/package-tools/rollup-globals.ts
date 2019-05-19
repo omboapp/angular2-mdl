@@ -22,7 +22,7 @@ const cdkSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDi
 */
 
 /** List of potential secondary entry-points for the `mdl` package. */
-const matSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'lib'));
+const mdlSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'mdl'));
 
 /*
 /!** List of potential secondary entry-points for the cdk-experimental package. *!/
@@ -33,8 +33,8 @@ const cdkExperimentalSecondaryEntryPoints =
 const rollupCdkEntryPoints = generateRollupEntryPoints('cdk', cdkSecondaryEntryPoints);
 */
 
-/** Object with all material entry points in the format of Rollup globals. */
-const rollupMatEntryPoints = generateRollupEntryPoints('mdl', matSecondaryEntryPoints);
+/** Object with all Material Design Lite entry points in the format of Rollup globals. */
+const rollupMdlEntryPoints = generateRollupEntryPoints('mdl', mdlSecondaryEntryPoints);
 
 /*
 /!** Object with all cdk-experimental entry points in the format of Rollup globals. *!/
@@ -69,8 +69,8 @@ export const rollupGlobals = {
 */
   '@angular/mdl': 'ng.mdl',
 /*
-  '@angular/material-examples': 'ng.materialExamples',
-  '@angular/material-experimental': 'ng.materialExperimental',
+  '@angular/mdl-examples': 'ng.mdlExamples',
+  '@angular/mdl-experimental': 'ng.mdlExperimental',
   '@angular/material-moment-adapter': 'ng.materialMomentAdapter',
 */
 
@@ -78,7 +78,7 @@ export const rollupGlobals = {
 /*
   ...rollupCdkEntryPoints,
 */
-  ...rollupMatEntryPoints,
+  ...rollupMdlEntryPoints,
 /*
   ...rollupCdkExperimentalEntryPoints,
 */

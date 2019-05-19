@@ -33,7 +33,7 @@ import { SnackbarDemo } from './snackbar/snackbar.component';
 import { TableDemo } from './tables/table.component';
 import { TabsDemo } from './tabs/tabs.component';
 import { TextFieldDemo } from './textfield/textfield.component';
-import { MdlLayoutComponent } from '../../lib/layout';
+import { MdlLayoutComponent } from '../../mdl/layout';
 import { ReactiveFormsDemo } from './reactiveforms/reactiveform.component';
 import { AbstractDemoComponent } from './abstract-demo.component';
 import { ThemeDemo } from './theme/theme.component';

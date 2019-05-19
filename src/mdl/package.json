@@ -1,0 +1,61 @@
+{
+	"name": "@angular/mdl",
+	"version": "0.0.0-PLACEHOLDER",
+	"description": "Angular components, directives and styles based on material design lite https://getmdl.io.",
+	"main": "./bundles/mdl.umd.js",
+	"module": "./esm5/mdl.es5.js",
+	"es2015": "./esm2015/mdl.js",
+	"typings": "./mdl.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/omboapp/angular2-mdl.git"
+	},
+	"keywords": [
+		"angular 2 4 5 6 7 8",
+		"angular2",
+		"angular4",
+		"angular5",
+		"angular6",
+		"angular7",
+		"angular8",
+		"angular",
+		"material",
+		"material design",
+		"material design lite",
+		"components",
+		"typescript",
+		"button",
+		"card",
+		"chips",
+		"dialog",
+		"snackbar",
+		"layouts",
+		"reactive forms",
+		"tables",
+		"tabs",
+		"test fields",
+		"toggle"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/omboapp/angular2-mdl/issues"
+	},
+	"homepage": "https://github.com/omboapp/angular2-mdl#readme",
+	"peerDependencies": {
+		"@angular/animations": "0.0.0-NG",
+		"@angular/core": "0.0.0-NG",
+		"@angular/common": "0.0.0-NG",
+		"@angular/forms": "0.0.0-NG"
+	},
+	"dependencies": {
+		"tslib": "^1.7.1"
+	},
+	"schematics": "./schematics/collection.json",
+	"ng-update": {
+		"migrations": "./schematics/migration.json",
+		"packageGroup": [
+			"@angular/mdl"
+		]
+	},
+	"sideEffects": false
+}

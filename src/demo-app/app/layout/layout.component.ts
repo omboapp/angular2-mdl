@@ -4,7 +4,7 @@ import {
 	ActivatedRoute
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { MdlScreenSizeService } from '../../../lib/layout';
+import { MdlScreenSizeService } from '../../../mdl/layout';
 import { flyInOutTrigger } from '../animations/flyInOutTrigger-animation';
 import { hostConfig } from '../animations/flyInOutTrigger-animation';
 import { AbstractDemoComponent } from '../abstract-demo.component';

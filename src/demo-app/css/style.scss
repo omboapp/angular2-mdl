@@ -1,4 +1,4 @@
-@import "../../lib/common/theming/color-definitions";
+@import "../../mdl/common/theming/color-definitions";
 
 $color-primary: $palette-blue-500;
 $color-primary-dark: $palette-blue-700;
@@ -6,6 +6,6 @@ $color-accent: $palette-indigo-A200;
 $color-primary-contrast: $color-dark-contrast;
 $color-accent-contrast: $color-dark-contrast;
 
-@import '../../lib/common/theming/material-design-lite';
+@import '../../mdl/common/theming/material-design-lite';
 
 @import "prism.css";

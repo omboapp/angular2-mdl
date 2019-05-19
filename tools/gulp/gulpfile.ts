@@ -6,7 +6,7 @@ import {
   cdkExperimentalPackage,
   cdkPackage,
   examplesPackage,
-  materialExperimentalPackage,
+  mdlExperimentalPackage,
 */
   mdlPackage,
 /*
@@ -20,7 +20,7 @@ createPackageBuildTasks(cdkExperimentalPackage);
 */
 createPackageBuildTasks(mdlPackage);
 /*
-createPackageBuildTasks(materialExperimentalPackage);
+createPackageBuildTasks(mdlExperimentalPackage);
 createPackageBuildTasks(examplesPackage, ['build-examples-module']);
 createPackageBuildTasks(momentAdapterPackage);
 */
@@ -33,7 +33,7 @@ import './tasks/default';
 import './tasks/development';
 // import './tasks/example-module';
 import './tasks/lint';
-import './tasks/material-release';
+import './tasks/mdl-release';
 import './tasks/unit-test';
 import './tasks/universal';
 
