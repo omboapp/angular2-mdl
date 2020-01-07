@@ -25,7 +25,7 @@ import { MdlDialogService } from './dialog';
 })
 export class MdlDialogComponent
 {
-	@ViewChild(TemplateRef) public template: TemplateRef<any>;
+	@ViewChild(TemplateRef, { static: false }) public template: TemplateRef<any>;
 
 	// @deprecated use mdl-dialog-config instead (will be removed in 3.0.0)
 	private _modal: boolean;

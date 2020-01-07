@@ -487,10 +487,10 @@ class MdlTestViewComponent {
 
 
 
-  @ViewChild('btn') button: MdlButtonComponent;
-  @ViewChild('targetBtn') targetBtn: MdlButtonComponent;
+  @ViewChild('btn', { static: false }) button: MdlButtonComponent;
+  @ViewChild('targetBtn', { static: false }) targetBtn: MdlButtonComponent;
 
-  public getFakeMouseEvent(){
+  public getFakeMouseEvent() {
     let mouseEvent: any = new MouseEvent('click');
     mouseEvent['testtarget'] = this.targetBtn.elementRef.nativeElement;
     return mouseEvent;

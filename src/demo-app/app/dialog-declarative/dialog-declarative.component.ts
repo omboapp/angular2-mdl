@@ -29,8 +29,8 @@ export class DialogDeclarativeDemo extends AbstractDemoComponent
 	public username: string = 'Marvin';
 	public editedUsername: string;
 
-	@ViewChild('editUserDialog') private editUserDialog: MdlDialogComponent;
-	@ViewChild(MdlTextFieldComponent) private tfName: MdlTextFieldComponent;
+	@ViewChild('editUserDialog', { static: false }) private editUserDialog: MdlDialogComponent;
+	@ViewChild(MdlTextFieldComponent, { static: false }) private tfName: MdlTextFieldComponent;
 
 	constructor(
 		router: Router,

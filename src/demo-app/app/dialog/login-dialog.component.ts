@@ -24,7 +24,7 @@ export const TEST_VALUE = new InjectionToken<string>('test value');
 })
 export class LoginDialogComponent implements OnInit
 {
-	@ViewChild('firstElement') private inputElement: MdlTextFieldComponent;
+	@ViewChild('firstElement', { static: false }) private inputElement: MdlTextFieldComponent;
 
 	public form: FormGroup;
 	public username = new FormControl('', Validators.required);

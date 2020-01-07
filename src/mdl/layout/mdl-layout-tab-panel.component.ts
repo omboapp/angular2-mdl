@@ -21,7 +21,7 @@ import { MdlTabPanelTitleComponent } from '@angular/mdl/tabs';
 })
 export class MdlLayoutTabPanelComponent
 {
-	@ContentChild(MdlTabPanelTitleComponent) public titleComponent: MdlTabPanelTitleComponent;
+	@ContentChild(MdlTabPanelTitleComponent, { static: false }) public titleComponent: MdlTabPanelTitleComponent;
 
 	@Input('mdl-layout-tab-panel-title') public title: string;
 

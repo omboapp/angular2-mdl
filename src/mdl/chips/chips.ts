@@ -54,7 +54,7 @@ export class MdlChipComponent
 	@Input('mdl-label') public mdlLabel: any;
 	@Input('mdl-action-icon') public mdlActionIcon: any;
 	@Output('action-click') public actionClick = new EventEmitter();
-	@ContentChild(MdlChipContactDirective) public chipContact: MdlChipContactDirective;
+	@ContentChild(MdlChipContactDirective, { static: false }) public chipContact: MdlChipContactDirective;
 
 	public action()
 	{

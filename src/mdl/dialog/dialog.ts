@@ -429,7 +429,7 @@ const leaveTransitionEasingCurve = 'cubic-bezier(0.0, 0.0, 0.2, 1)';
 })
 export class MdlDialogHostComponent implements OnInit
 {
-	@ViewChild('dialogTarget', { read: ViewContainerRef }) public dialogTarget: any;
+	@ViewChild('dialogTarget', { read: ViewContainerRef, static: false }) public dialogTarget: any;
 
 	public visible = false;
 

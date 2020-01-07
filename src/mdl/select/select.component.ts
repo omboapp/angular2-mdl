@@ -70,8 +70,8 @@ export class MdlSelectComponent
 	@Output() change: EventEmitter<any> = new EventEmitter(true);
 	@Output() blur: EventEmitter<any> = new EventEmitter(true);
 	@Output() inputChange: EventEmitter<any> = new EventEmitter(true);
-	@ViewChild('selectInput') selectInput: ElementRef;
-	@ViewChild(MdlPopoverComponent) public popoverComponent: MdlPopoverComponent;
+	@ViewChild('selectInput', { static: false }) selectInput: ElementRef;
+	@ViewChild(MdlPopoverComponent, { static: false }) public popoverComponent: MdlPopoverComponent;
 	@ContentChildren(MdlOptionComponent) public optionComponents: QueryList<MdlOptionComponent>;
 
 	private selectElement: HTMLElement;

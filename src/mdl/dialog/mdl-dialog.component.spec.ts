@@ -130,7 +130,7 @@ function checkModalConfig(component: Type<any>, failMessage: string)
 class MdlTestComponent
 {
 
-	@ViewChild('dialog') public dialog: MdlDialogComponent;
+	@ViewChild('dialog', { static: false }) public dialog: MdlDialogComponent;
 	public dialogRef: MdlDialogReference;
 
 	public onDialogShow(dialogRef: MdlDialogReference)
@@ -154,7 +154,7 @@ class MdlTestComponent
 class ModalTrueConfigFalseComponent
 {
 
-	@ViewChild('dialog') public dialog: MdlDialogComponent;
+	@ViewChild('dialog', { static: false }) public dialog: MdlDialogComponent;
 
 }
 
@@ -170,7 +170,7 @@ class ModalTrueConfigFalseComponent
 class ModalFalseConfigTrueComponent
 {
 
-	@ViewChild('dialog') public dialog: MdlDialogComponent;
+	@ViewChild('dialog', { static: false }) public dialog: MdlDialogComponent;
 
 }
 
@@ -186,6 +186,6 @@ class ModalFalseConfigTrueComponent
 class ModalComponent
 {
 
-	@ViewChild('dialog') public dialog: MdlDialogComponent;
+	@ViewChild('dialog', { static: false }) public dialog: MdlDialogComponent;
 
 }

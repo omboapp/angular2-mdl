@@ -142,13 +142,13 @@ export class MdlMenuComponent implements OnInit, AfterViewInit, OnDestroy
 {
 	@Input('mdl-menu-position') public position: string;
 
-	@ViewChild('container') public containerChild: ElementRef;
+	@ViewChild('container', { static: false }) public containerChild: ElementRef;
 	private container: HTMLElement;
 
-	@ViewChild('menuElement') public menuElementChild: ElementRef;
+	@ViewChild('menuElement', { static: false }) public menuElementChild: ElementRef;
 	private menuElement: HTMLElement;
 
-	@ViewChild('outline') public outlineChild: ElementRef;
+	@ViewChild('outline', { static: false }) public outlineChild: ElementRef;
 	private outline: HTMLElement;
 
 	@ContentChildren(MdlMenuItemComponent) public menuItemComponents: QueryList<MdlMenuItemComponent>;

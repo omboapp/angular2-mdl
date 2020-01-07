@@ -239,11 +239,11 @@ export class MdlLayoutHeaderComponent
 })
 export class MdlLayoutComponent implements AfterContentInit, OnDestroy, OnChanges
 {
-	@ContentChild(MdlLayoutHeaderComponent) public header: MdlLayoutHeaderComponent;
+	@ContentChild(MdlLayoutHeaderComponent, { static: false }) public header: MdlLayoutHeaderComponent;
 	// will be set to undefined, if not a direct child or not present in 2.0.0 i
 	// n 2.0.1 it is now the grand child drawer again :(
-	@ContentChild(MdlLayoutDrawerComponent) public drawer: null | MdlLayoutDrawerComponent;
-	@ContentChild(MdlLayoutContentComponent) public content: MdlLayoutContentComponent;
+	@ContentChild(MdlLayoutDrawerComponent, { static: false }) public drawer: null | MdlLayoutDrawerComponent;
+	@ContentChild(MdlLayoutContentComponent, { static: false }) public content: MdlLayoutContentComponent;
 
 	@Input('mdl-layout-mode')
 	public mode: string = STANDARD;

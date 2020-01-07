@@ -19,7 +19,7 @@ export class MdlOptionComponent
 {
 	@Input('disabled') public disabled = false;
 	@Input('value') public value: any;
-	@ViewChild('contentWrapper') contentWrapper: ElementRef;
+	@ViewChild('contentWrapper', { static: false }) contentWrapper: ElementRef;
 
 	public text: any;
 	public multiple: boolean = false;

@@ -142,7 +142,7 @@ export class MdlTextFieldComponent implements ControlValueAccessor, OnChanges, D
 	@Output('keyup')
 	public keyupEmitter: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
 
-	@ViewChild('input') public inputEl: ElementRef;
+	@ViewChild('input', { static: false }) public inputEl: ElementRef;
 
 	get value(): any { return this.value_; }
 	@Input() set value(v: any) {

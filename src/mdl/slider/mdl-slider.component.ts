@@ -58,9 +58,9 @@ export class MdlSliderComponent implements ControlValueAccessor
 	@Input() public min: number;
 	@Input() public max: number;
 	@Input() public step: number;
-	@ViewChild('lower') public lowerEl: ElementRef;
-	@ViewChild('uppper') public upperEl: ElementRef;
-	@ViewChild('input') public inputEl: ElementRef;
+	@ViewChild('lower', { static: false }) public lowerEl: ElementRef;
+	@ViewChild('uppper', { static: false }) public upperEl: ElementRef;
+	@ViewChild('input', { static: false }) public inputEl: ElementRef;
 
 	private _disabled: boolean = false;
 	@Input() get disabled(): boolean { return this._disabled; }

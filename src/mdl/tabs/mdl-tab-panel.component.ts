@@ -30,7 +30,7 @@ export class MdlTabPanelContent
 })
 export class MdlTabPanelComponent
 {
-	@ContentChild(MdlTabPanelTitleComponent) public titleComponent: MdlTabPanelTitleComponent;
+	@ContentChild(MdlTabPanelTitleComponent, { static: false }) public titleComponent: MdlTabPanelTitleComponent;
 
 	@Input('mdl-tab-panel-title') public title: string;
 	@Input('disabled') public disabled: boolean;

@@ -19,7 +19,7 @@ import { AbstractDemoComponent } from '../abstract-demo.component';
 })
 export class TextFieldDemo extends AbstractDemoComponent implements AfterViewInit
 {
-	@ViewChild('theFirstTextfield') tf: MdlTextFieldComponent;
+	@ViewChild('theFirstTextfield', { static: false }) tf: MdlTextFieldComponent;
 
 	public number1: null | number = null;
 
